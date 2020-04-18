@@ -46,7 +46,6 @@ public class PlayerGrab : MonoBehaviour
             directionalThrowForce.x *= flipDirectionController.LastDirection;
             rbEgg.AddForce(directionalThrowForce, ForceMode2D.Impulse);
             grabbedEgg = false;
-            rbEgg.gameObject.layer = 0;
             readyToCatch = false;
         }
 

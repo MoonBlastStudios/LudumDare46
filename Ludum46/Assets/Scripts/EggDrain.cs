@@ -37,8 +37,9 @@ public class EggDrain : MonoBehaviour
         {
             Recover();
         }
-
-        Hud.Instance.UpdateBar(m_currentHealth / m_maxHealth);
+        
+        if(Hud.Instance != null)
+            Hud.Instance.UpdateBar(m_currentHealth / m_maxHealth);
     }
 
 
