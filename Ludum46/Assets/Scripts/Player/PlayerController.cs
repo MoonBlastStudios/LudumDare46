@@ -147,10 +147,8 @@ namespace Player
                 if (!m_dashTimer.Tick(1)) return;
                 
                 m_playerState = PlayerState.Falling;
-                var velocity = m_rigidBody2D.velocity;
-                m_rigidBody2D.velocity = velocity;
                 m_rigidBody2D.gravityScale = m_gravityScale;
-                m_dash = false;
+                //m_dash = false;
                 return;
             }
         
