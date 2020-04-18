@@ -20,9 +20,9 @@ public class EggThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("mouse 0")){
+        /*if (Input.GetKeyDown("mouse 0")){
             Throw = true;
-        }
+        }*/
     }
 
     void FixedUpdate() 
