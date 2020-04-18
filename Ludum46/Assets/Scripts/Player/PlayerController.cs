@@ -154,7 +154,7 @@ namespace Player
                 return;
             }
         
-            if (!Input.GetKeyDown(KeyCode.LeftShift)) return;
+            if (!Input.GetKeyDown(KeyCode.LeftShift) || m_secondaryJumpAction) return;
 
             var multiplier = (m_horizontalInput > m_inputDeadZone || m_horizontalInput < -m_inputDeadZone) ? m_horizontalInput : 1;
             
@@ -163,6 +163,7 @@ namespace Player
             m_playerState = PlayerState.Dashing;
             m_rigidBody2D.gravityScale = 0;
             m_dash = true;
+            m_secondaryJumpAction = true;
         }
 
         public void JumpReset()

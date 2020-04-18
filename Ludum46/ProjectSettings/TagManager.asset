@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Egg
   - Lamp
+  - Wall
   layers:
   - Default
   - TransparentFX
