@@ -40,5 +40,10 @@ namespace UI
         }
 
         public static Hud Instance => m_instance;
+
+        public void UpdateBar(float p_ratio)
+        {
+            m_hpBarController.UpdateValue(p_ratio);
+        }
     }
 }

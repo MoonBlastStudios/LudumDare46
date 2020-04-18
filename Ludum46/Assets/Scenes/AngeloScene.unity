@@ -946,6 +946,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8438673040078032934, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+        type: 3}
+      propertyPath: m_maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438673040078032934, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+        type: 3}
+      propertyPath: m_drainRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438673040078032934, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+        type: 3}
+      propertyPath: m_recoveryRate
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e24229dc073a9c41a4b5115c2a7fdaa, type: 3}
 --- !u!1 &2146271944
