@@ -59,12 +59,13 @@ public class PlayerGrab : MonoBehaviour
             }
         }
 
+        var distancex = (rbPlayer.position.x - rbEgg.position.x);
+        var distancey = (rbEgg.position.y - rbPlayer.position.y);
+        //var distance = Vector2.Distance(rbPlayer.position, rbEgg.position);
 
-        var distance = Vector2.Distance(rbPlayer.position, rbEgg.position);
+        //Debug.Log(distancey);
 
-        Debug.Log(distance);
-
-        if(distance < 1f)
+        if((distancex < 1f && distancex > -1f) && (distancey < 2.1f && distancey > -0.45f))
         {
             grabbedEgg = true;
             rbEgg.gameObject.layer = eggHoldingLayer;

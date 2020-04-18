@@ -139,10 +139,11 @@ MonoBehaviour:
   flipDirectionController: {fileID: 523851313314388668}
   readyCatchTime: 1
   eggHoldingLayer: 8
-  rbEgg: {fileID: 0}
+  rbEgg: {fileID: 3280614576523513104, guid: 3e24229dc073a9c41a4b5115c2a7fdaa, type: 3}
   rbPlayer: {fileID: 6970555228964498018}
   playerTrans: {fileID: 6970555228964498017}
-  eggTrans: {fileID: 0}
+  eggTrans: {fileID: 3280614576523513111, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+    type: 3}
   grabPosion: {x: 0, y: 110}
   throwForce: {x: 3, y: 8}
 --- !u!114 &523851313314388668
