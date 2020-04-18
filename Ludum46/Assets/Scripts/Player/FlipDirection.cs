@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using Tools.Events;
 using UnityEngine;
 using UnityEngine.Events;
+using Tools;
 
 namespace Player
 {
@@ -49,3 +50,5 @@ namespace Player
         public IntEvent FlipEvent => m_flipEvent;
     }
 }
+    
+

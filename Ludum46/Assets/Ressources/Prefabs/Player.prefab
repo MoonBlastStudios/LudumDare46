@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7492148041099428829}
   - component: {fileID: 7492148041099428828}
   - component: {fileID: 7492148041099428831}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,8 @@ GameObject:
   - component: {fileID: 7492148041606131933}
   - component: {fileID: 7492148041606131922}
   - component: {fileID: 7492148041606131921}
-  m_Layer: 0
+  - component: {fileID: 2672326385907089061}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,3 +238,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerController: {fileID: 7492148041606131922}
   m_wallTag: Wall
+--- !u!114 &2672326385907089061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492148041606131932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6069f60d527414793968e05320f460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipDirectionController: {fileID: 0}
+  eggHoldingLayer: 8
+  rbEgg: {fileID: 0}
+  rbPlayer: {fileID: 0}
+  playerTrans: {fileID: 0}
+  eggTrans: {fileID: 0}
+  grabPosion: {x: 0, y: 100}
+  throwForce: {x: 0, y: 0}
