@@ -205,5 +205,8 @@ namespace Player
                 m_playerState = value;
             }
         }
+
+
+        public float HorizontalInput => m_horizontalInput;
     }
 }
