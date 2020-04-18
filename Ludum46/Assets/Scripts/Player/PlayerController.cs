@@ -127,12 +127,14 @@ namespace Player
 
             if (m_jump)
             {
-                var velocity = m_rigidBody2D.velocity;
-                velocity.y = 0;
-                m_rigidBody2D.velocity = velocity;
                 m_secondaryJumpAction = true;
             }
 
+            
+            var velocity = m_rigidBody2D.velocity;
+            velocity.y = 0;
+            m_rigidBody2D.velocity = velocity;
+            
             m_rigidBody2D.AddForce(Vector2.up * m_jumpStrength, ForceMode2D.Impulse);
         
             m_jump = true;
@@ -155,12 +157,17 @@ namespace Player
             if (!Input.GetKeyDown(KeyCode.LeftShift)) return;
 
             var multiplier = (m_horizontalInput > m_inputDeadZone || m_horizontalInput < -m_inputDeadZone) ? m_horizontalInput : 1;
-        
+            
             m_rigidBody2D.AddForce(new Vector2(1 * multiplier, 0) * m_dashForce, ForceMode2D.Impulse);
 
             m_playerState = PlayerState.Dashing;
             m_rigidBody2D.gravityScale = 0;
             m_dash = true;
+        }
+
+        public void JumpReset()
+        {
+            m_jump = false;
         }
     
 
