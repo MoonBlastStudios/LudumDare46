@@ -11,12 +11,13 @@ public class PlayerGrab : MonoBehaviour
     public Rigidbody2D rbPlayer;
     public Transform playerTrans;
     public Transform eggTrans;
-    bool touchingEgg = false;
-    bool grabbedEgg = false;
-    bool readyToCatch = false;
-    bool throwEgg = false;
+    
+    private bool grabbedEgg = false;
+    private bool readyToCatch = false;
+
     public Vector2 grabPosion;
     public Vector2 throwForce;
+    public Vector2 dropForce;
 
 
     private Timer readyCatchTimeTimer;
@@ -46,7 +47,6 @@ public class PlayerGrab : MonoBehaviour
             directionalThrowForce.x *= flipDirectionController.LastDirection;
             rbEgg.AddForce(directionalThrowForce, ForceMode2D.Impulse);
             grabbedEgg = false;
-            rbEgg.gameObject.layer = 0;
             readyToCatch = false;
         }
 
@@ -77,5 +77,15 @@ public class PlayerGrab : MonoBehaviour
         if (grabbedEgg != true) return;
 
         rbEgg.MovePosition(rbPlayer.position + grabPosion * Time.deltaTime);
+    }
+
+
+    public void ResetGrab()
+    {
+        var directionalDropForce = dropForce;
+        directionalDropForce.x *= flipDirectionController.LastDirection;
+        rbEgg.AddForce(directionalDropForce, ForceMode2D.Impulse);
+        grabbedEgg = false;
+        readyToCatch = false;
     }
 }

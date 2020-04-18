@@ -162,6 +162,21 @@ PrefabInstance:
       propertyPath: eggTrans
       value: 
       objectReference: {fileID: 41307959}
+    - target: {fileID: 2473344045357523988, guid: b8da843a0ff2aaa47b8682aa79f8989f,
+        type: 3}
+      propertyPath: throwForce.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473344045357523988, guid: b8da843a0ff2aaa47b8682aa79f8989f,
+        type: 3}
+      propertyPath: throwForce.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473344045357523988, guid: b8da843a0ff2aaa47b8682aa79f8989f,
+        type: 3}
+      propertyPath: readyCatchTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6970555228964498017, guid: b8da843a0ff2aaa47b8682aa79f8989f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -247,7 +262,7 @@ GameObject:
   - component: {fileID: 1204931435}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

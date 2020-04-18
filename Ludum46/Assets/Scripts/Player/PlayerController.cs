@@ -10,6 +10,7 @@ namespace Player
         [SerializeField] private PlayerState m_playerState;
     
         [FoldoutGroup("Components")] [SerializeField] private Rigidbody2D m_rigidBody2D;
+        [FoldoutGroup("Components")] [SerializeField] private FlipDirection m_flipDirection;
 
         [FoldoutGroup("Movement Data")] [SerializeField] private float m_inputDeadZone;
         [FoldoutGroup("Movement Data")] [SerializeField] private Vector2 m_velocityDeadZone;
@@ -28,6 +29,7 @@ namespace Player
         private float m_horizontalInput;
         private float m_gravityScale;
         private Timer m_dashTimer;
+        private GameObject m_ground;
 
         private void Awake()
         {
@@ -60,6 +62,26 @@ namespace Player
             Move();
         }
 
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag($"Ground") && transform.position.y > other.contacts[0].point.y && !other.gameObject.Equals(m_ground))
+            {
+                Debug.Log("Collided With Ground");
+                m_ground = other.gameObject;
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            //We Left the ground that we were standing on
+            if (other.gameObject.Equals(m_ground))
+            {
+                m_ground = null;
+            }
+            
+        }
+
         private void BuildMovementInput()
         {
             m_horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -78,7 +100,7 @@ namespace Player
 
                 State = PlayerState.Falling;
             }
-            else if(State != PlayerState.Jumping)
+            else if (m_ground != null)
             {
                 if (m_rigidBody2D.velocity.x > m_velocityDeadZone.x || m_rigidBody2D.velocity.x < -m_velocityDeadZone.x)
                 {
@@ -153,12 +175,15 @@ namespace Player
                 //m_dash = false;
                 return;
             }
-        
-            if (!Input.GetKeyDown(KeyCode.LeftShift) || m_secondaryJumpAction) return;
 
-            var multiplier = (m_horizontalInput > m_inputDeadZone || m_horizontalInput < -m_inputDeadZone) ? m_horizontalInput : 1;
+            if (!Input.GetKeyDown(KeyCode.LeftShift)) return;
             
-            m_rigidBody2D.AddForce(new Vector2(1 * multiplier, 0) * m_dashForce, ForceMode2D.Impulse);
+            if (m_secondaryJumpAction) return; 
+            
+            Debug.Log("Dash Activated");
+            
+            m_rigidBody2D.AddForce(new Vector2(m_flipDirection.LastDirection, 0) * m_dashForce,
+                ForceMode2D.Impulse);
 
             m_playerState = PlayerState.Dashing;
             m_rigidBody2D.gravityScale = 0;

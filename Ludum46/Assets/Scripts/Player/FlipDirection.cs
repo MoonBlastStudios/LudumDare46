@@ -13,11 +13,12 @@ namespace Player
 
         private IntEvent m_flipEvent;
 
-        [SerializeField] [ReadOnly] private int m_lastDirection = 0;
+        [SerializeField] [ReadOnly] private int m_lastDirection = 1;
 
 
         private void Awake()
         {
+            m_lastDirection = 1;
             BindEvents();
         }
 
