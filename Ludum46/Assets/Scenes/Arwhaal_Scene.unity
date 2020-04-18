@@ -336,6 +336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg
       objectReference: {fileID: 0}
+    - target: {fileID: 3280614576523513107, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Egg
+      objectReference: {fileID: 0}
     - target: {fileID: 3280614576523513111, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -390,6 +395,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820616050024706679, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820616050024706679, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820616050024706679, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820616050024706679, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846151627081822872, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e24229dc073a9c41a4b5115c2a7fdaa, type: 3}
@@ -465,6 +495,16 @@ PrefabInstance:
       propertyPath: eggTrans
       value: 
       objectReference: {fileID: 1454516543}
+    - target: {fileID: 3866931023005618407, guid: 943a31d5d0db5a042a3533fd24e3d6de,
+        type: 3}
+      propertyPath: eggHoldingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866931023005618407, guid: 943a31d5d0db5a042a3533fd24e3d6de,
+        type: 3}
+      propertyPath: grabPosion.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3866931023005618410, guid: 943a31d5d0db5a042a3533fd24e3d6de,
         type: 3}
       propertyPath: m_Name

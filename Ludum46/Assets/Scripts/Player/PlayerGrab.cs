@@ -22,7 +22,9 @@ public class PlayerGrab : MonoBehaviour
         }
         else {
             touchingEgg = false;
+            collision.gameObject.layer = 0;
         }
+
         Debug.Log(touchingEgg);
     }
         
