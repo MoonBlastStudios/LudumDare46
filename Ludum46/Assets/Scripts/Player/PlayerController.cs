@@ -148,9 +148,9 @@ namespace Player
                 
                 m_playerState = PlayerState.Falling;
                 var velocity = m_rigidBody2D.velocity;
-                velocity.x = 0;
                 m_rigidBody2D.velocity = velocity;
-                //m_rigidBody2D.gravityScale = m_gravityScale;
+                m_rigidBody2D.gravityScale = m_gravityScale;
+                m_dash = false;
                 return;
             }
         
@@ -161,7 +161,7 @@ namespace Player
             m_rigidBody2D.AddForce(new Vector2(1 * multiplier, 0) * m_dashForce, ForceMode2D.Impulse);
 
             m_playerState = PlayerState.Dashing;
-            //m_rigidBody2D.gravityScale = 0;
+            m_rigidBody2D.gravityScale = 0;
             m_dash = true;
         }
     

@@ -272,7 +272,7 @@ MonoBehaviour:
   m_jump: 0
   m_secondaryJumpAction: 0
   m_dashForce: 15
-  m_dashDuration: 0.3
+  m_dashDuration: 0.25
   m_dash: 0
 --- !u!50 &1392399737
 Rigidbody2D:
