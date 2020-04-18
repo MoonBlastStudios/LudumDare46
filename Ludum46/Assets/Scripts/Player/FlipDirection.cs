@@ -1,5 +1,6 @@
 ﻿using System;
 using Sirenix.OdinInspector;
+using Tools.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,7 +10,7 @@ namespace Player
     {
         [SerializeField] private PlayerController m_playerController;
 
-        private UnityEvent m_flipEvent;
+        private IntEvent m_flipEvent;
 
         [SerializeField] [ReadOnly] private int m_lastDirection = 0;
 
@@ -26,11 +27,11 @@ namespace Player
 
         private void BindEvents()
         {
-            m_flipEvent = new UnityEvent();
+            m_flipEvent = new IntEvent();
         }
 
 
-        private int LastDirection
+        public int LastDirection
         {
             get => m_lastDirection;
             set
@@ -39,10 +40,12 @@ namespace Player
                 if (m_lastDirection != roundedInput && roundedInput != 0)
                 {
                     Debug.Log("Player Changed Direction");
-                    m_flipEvent.Invoke();
+                    m_flipEvent.Invoke(value);
                     m_lastDirection = value;
                 }
             }
         }
+
+        public IntEvent FlipEvent => m_flipEvent;
     }
 }
