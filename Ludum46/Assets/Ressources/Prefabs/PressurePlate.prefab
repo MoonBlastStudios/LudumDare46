@@ -143,5 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783eb60b4e366904c98957e5efaef698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider2D: {fileID: 0}
+  m_onlyOnce: 0
   m_gates:
   - {fileID: 0}

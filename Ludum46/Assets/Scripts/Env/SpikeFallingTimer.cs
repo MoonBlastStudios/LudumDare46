@@ -28,6 +28,6 @@ public class SpikeFallingTimer : MonoBehaviour
     public GameObject spike;
     void Spawn()
     {
-        Instantiate(spike, transform.position, Quaternion.identity, null);
+        Instantiate(spike, transform.position, spike.transform.rotation, null);
     }
 }
