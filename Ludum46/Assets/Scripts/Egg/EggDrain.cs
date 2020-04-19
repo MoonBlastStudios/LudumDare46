@@ -29,7 +29,7 @@ namespace Egg
         {
             if (m_gameOver) return;
         
-            if (m_drain)
+            if (!EggStateController.Instance.IsSafe())
             {
                 Drain();
             }

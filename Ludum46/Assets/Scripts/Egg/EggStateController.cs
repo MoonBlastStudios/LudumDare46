@@ -39,6 +39,11 @@ namespace Egg
             m_instance = this;
         }
 
+        public bool IsSafe()
+        {
+            return m_underLamp || m_grabbed;
+        }
+
         public bool Grabbed
         {
             get => m_grabbed;
