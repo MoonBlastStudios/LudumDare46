@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 3280614576523513108}
   - component: {fileID: 8438673040078032934}
   - component: {fileID: 5922458815260796107}
+  - component: {fileID: 98272306}
+  - component: {fileID: 98272307}
+  - component: {fileID: 98272308}
   m_Layer: 8
   m_Name: Egg
   m_TagString: Egg
@@ -150,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3976992e40a2f654aabc6aa049dd132c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_groundTag: 
+  m_groundTag: Ground
   m_currentHealth: 100
   m_maxHealth: 100
   m_drainRate: 5
@@ -168,6 +171,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_eggNameLabel: {fileID: 4820616050024706679}
+--- !u!114 &98272306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280614576523513107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382eb28843f3cb44a9eb4685090ccc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_grabbed: 1
+  m_underLamp: 0
+  m_onGround: 0
+--- !u!114 &98272307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280614576523513107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d943e07047b454490bd7a74cdad35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_groundTag: Ground
+--- !u!114 &98272308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280614576523513107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15a51762820ef1439c9eb03d1e2569a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5576509512946443236
 GameObject:
   m_ObjectHideFlags: 0
