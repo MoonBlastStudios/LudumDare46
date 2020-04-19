@@ -22,7 +22,8 @@ namespace Player
         private void DropEgg()
         {
             if (!Input.GetButtonDown("Fire2") || !EggStateController.Instance.Grabbed) return;
-        
+            
+            
             m_playerGrab.ResetGrab();
         }
     

@@ -13,13 +13,15 @@ public class PlayerGrab : MonoBehaviour
     public Transform playerTrans;
     public Transform eggTrans;
     
-    private bool grabbedEgg = false;
+    private bool grabbedEgg = true;
     private bool readyToCatch = false;
 
     public Vector2 grabPosion;
     public Vector2 throwForce;
     public Vector2 dropForce;
 
+    public GameObject regularHitBox;
+    public GameObject extendedHitBox;
 
     private Timer readyCatchTimeTimer;
 
@@ -50,6 +52,8 @@ public class PlayerGrab : MonoBehaviour
             grabbedEgg = false;
             readyToCatch = false;
             EggStateController.Instance.Grabbed = false;
+            regularHitBox.SetActive(true);
+            extendedHitBox.SetActive(false);
         }
 
         if(!readyToCatch)
@@ -74,6 +78,8 @@ public class PlayerGrab : MonoBehaviour
             grabbedEgg = true;
             rbEgg.gameObject.layer = eggHoldingLayer;
             EggStateController.Instance.Grabbed = true;
+            regularHitBox.SetActive(false);
+            extendedHitBox.SetActive(true);
         }
     }
 
@@ -83,6 +89,7 @@ public class PlayerGrab : MonoBehaviour
 
         rbEgg.MovePosition(rbPlayer.position + grabPosion * Time.deltaTime);
     }
+    
 
 
     public void ResetGrab()
@@ -94,6 +101,8 @@ public class PlayerGrab : MonoBehaviour
         grabbedEgg = false;
         readyToCatch = false;
         readyCatchTimeTimer.ResetTimer();
+        regularHitBox.SetActive(true);
+        extendedHitBox.SetActive(false);
         EggStateController.Instance.Grabbed = false;
     }
 }

@@ -119,27 +119,32 @@ namespace Player
             if (m_horizontalInput < -m_inputDeadZone && m_rigidBody2D.velocity.x > -m_maxMovementSpeed)
             {
                 m_rigidBody2D.AddForce(Vector2.left * (m_acceleration * Time.deltaTime) );
+                return;
             }
-            else if (m_horizontalInput > m_inputDeadZone && m_rigidBody2D.velocity.x < m_maxMovementSpeed)
+            
+            if (m_horizontalInput > m_inputDeadZone && m_rigidBody2D.velocity.x < m_maxMovementSpeed)
             {
                 m_rigidBody2D.AddForce(Vector2.right * (m_acceleration * Time.deltaTime));
+                return;
             }
-            else if(State != PlayerState.Dashing)
+
+            if (State == PlayerState.Dashing || (m_horizontalInput < -m_inputDeadZone || m_horizontalInput > m_inputDeadZone)) return;
+            
+            Debug.Log("Slow Down");
+            
+            if (m_rigidBody2D.velocity.x > m_velocityDeadZone.x)
             {
-                if (m_rigidBody2D.velocity.x > m_velocityDeadZone.x)
-                {
-                    m_rigidBody2D.AddForce(Vector2.left * (m_deceleration * Time.deltaTime));
-                }
-                else if (m_rigidBody2D.velocity.x < -m_velocityDeadZone.x)
-                {
-                    m_rigidBody2D.AddForce(Vector2.right * (m_deceleration * Time.deltaTime));
-                }
-                else
-                {
-                    var velocity = m_rigidBody2D.velocity;
-                    velocity.x = 0;
-                    m_rigidBody2D.velocity = velocity;
-                }
+                m_rigidBody2D.AddForce(Vector2.left * (m_deceleration * Time.deltaTime));
+            }
+            else if (m_rigidBody2D.velocity.x < -m_velocityDeadZone.x)
+            {
+                m_rigidBody2D.AddForce(Vector2.right * (m_deceleration * Time.deltaTime));
+            }
+            else
+            {
+                var velocity = m_rigidBody2D.velocity;
+                velocity.x = 0;
+                m_rigidBody2D.velocity = velocity;
             }
         }
     
