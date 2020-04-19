@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class BouncePad : MonoBehaviour
 {
-    public int speed;
-    private void OnTriggerEnter2D(Collider2D other)
+    public int strength;
+    
+    private void OnCollisionEnter2D(Collision2D p_other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up*speed);
-        }
+        var obj = p_other.gameObject;
+
+
+        if (!(transform.position.y < obj.transform.position.y) || !obj.CompareTag("Player")) return;
+        
+        var rb = obj.GetComponent<Rigidbody2D>();
+        rb.AddForce(Vector2.up * strength, ForceMode2D.Impulse);
     }
 }

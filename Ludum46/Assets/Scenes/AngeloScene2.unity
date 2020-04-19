@@ -228,6 +228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BouncePad
       objectReference: {fileID: 0}
+    - target: {fileID: 2471380771034060218, guid: 89c5919a5c6a75c4296ff791da53b34f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2471380771034060223, guid: 89c5919a5c6a75c4296ff791da53b34f,
         type: 3}
       propertyPath: m_LocalPosition.x
