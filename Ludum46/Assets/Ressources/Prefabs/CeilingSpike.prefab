@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4178467198464371231}
   - component: {fileID: 4178467198464371217}
   - component: {fileID: 4178467198464371230}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: CeilingSpike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a78b8cf76935b4f96c04db57c91721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spike: {fileID: 0}
 --- !u!61 &4178467198464371231
 BoxCollider2D:
   m_ObjectHideFlags: 0
