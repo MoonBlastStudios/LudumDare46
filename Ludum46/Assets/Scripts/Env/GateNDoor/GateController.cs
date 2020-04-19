@@ -7,6 +7,7 @@ namespace Env.GateNDoor
         public Vector3 gateMove;
         public Transform gateTrans;
         
+        public bool lachedGate; //Bool used to use 
         bool pushed = false;
 
         // Start is called before the first frame update
@@ -33,10 +34,18 @@ namespace Env.GateNDoor
             gateTrans.position = gatePosition;
 
         }
-
+ 
         public void Close()
         {
         
+            if (!lachedGate)
+            {
+            Debug.Log("Gate Closing");
+            var gatePosition = gateTrans.position;
+            gatePosition -= gateMove;
+            gateTrans.position = gatePosition;
+            pushed = false;
+            }
         }
     }
 }
