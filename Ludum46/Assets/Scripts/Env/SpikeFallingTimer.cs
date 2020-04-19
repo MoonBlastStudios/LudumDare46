@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class SpikeFallingTimer : MonoBehaviour
 {
     private Timer timer;
-    private float m_endTime = 5;
+    public float m_endTime = 5;
     private Position location;
     
     // Start is called before the first frame update
