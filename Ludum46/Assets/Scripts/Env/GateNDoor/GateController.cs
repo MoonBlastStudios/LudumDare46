@@ -4,16 +4,17 @@ namespace Env.GateNDoor
 {
     public class GateController : MonoBehaviour
     {
-        public Vector3 gateMove;
-        public Transform gateTrans;
+        public Vector3 m_gateMove;
+        public Transform m_gateTrans;
         
-        public bool lachedGate; //Bool used to use 
-        bool pushed = false;
+        public bool m_lachedGate; //Bool used to use 
+        
+        private bool m_pushed = false;
 
         // Start is called before the first frame update
         void Start()
         {
-
+            
         }
 
         // Update is called once per frame
@@ -25,27 +26,28 @@ namespace Env.GateNDoor
         public void Open()
         {
             Debug.Log("Gate Opening");
-            var gatePosition = gateTrans.position;
-            if(!pushed)
+            var gatePosition = m_gateTrans.position;
+            
+            if(!m_pushed)
             {
-                gatePosition += gateMove;
-                pushed = true;
+                gatePosition += m_gateMove;
+                m_pushed = true;
             }
-            gateTrans.position = gatePosition;
+            
+            m_gateTrans.position = gatePosition;
 
         }
  
         public void Close()
         {
-        
-            if (!lachedGate)
-            {
+            if (m_lachedGate) return;
+            
             Debug.Log("Gate Closing");
-            var gatePosition = gateTrans.position;
-            gatePosition -= gateMove;
-            gateTrans.position = gatePosition;
-            pushed = false;
-            }
+            var gatePosition = m_gateTrans.position;
+            gatePosition -= m_gateMove;
+            m_gateTrans.position = gatePosition;
+            m_pushed = false;
         }
+        
     }
 }
