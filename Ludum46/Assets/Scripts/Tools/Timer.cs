@@ -57,6 +57,10 @@ namespace Tools
         public float StartTime => m_startTime;
 
         public float EndTime => m_endTime;
-        
+
+        public void ResetTimer()
+        {
+            m_currentTime = 0;
+        }
     }
 }

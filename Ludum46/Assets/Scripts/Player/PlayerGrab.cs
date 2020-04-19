@@ -1,4 +1,5 @@
-﻿using Player;
+﻿using Egg;
+using Player;
 using UnityEngine;
 using Tools;
 
@@ -48,15 +49,18 @@ public class PlayerGrab : MonoBehaviour
             rbEgg.AddForce(directionalThrowForce, ForceMode2D.Impulse);
             grabbedEgg = false;
             readyToCatch = false;
+            EggStateController.Instance.Grabbed = false;
         }
 
         if(!readyToCatch)
         {
-            if(readyCatchTimeTimer.Tick(1))
-            {
-                readyToCatch = true;
-                Debug.Log("Can Catch Again");
-            }
+            if (!readyCatchTimeTimer.Tick(1)) return;
+            
+            
+            readyToCatch = true;
+            Debug.Log("Can Catch Again");
+
+            return;
         }
 
         var distancex = (rbPlayer.position.x - rbEgg.position.x);
@@ -69,6 +73,7 @@ public class PlayerGrab : MonoBehaviour
         {
             grabbedEgg = true;
             rbEgg.gameObject.layer = eggHoldingLayer;
+            EggStateController.Instance.Grabbed = true;
         }
     }
 
@@ -82,10 +87,13 @@ public class PlayerGrab : MonoBehaviour
 
     public void ResetGrab()
     {
+        rbEgg.velocity = Vector2.zero;
         var directionalDropForce = dropForce;
         directionalDropForce.x *= flipDirectionController.LastDirection;
         rbEgg.AddForce(directionalDropForce, ForceMode2D.Impulse);
         grabbedEgg = false;
         readyToCatch = false;
+        readyCatchTimeTimer.ResetTimer();
+        EggStateController.Instance.Grabbed = false;
     }
 }

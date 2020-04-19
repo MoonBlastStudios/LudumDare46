@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Egg;
+using UnityEngine;
 
 namespace Player
 {
@@ -20,7 +21,7 @@ namespace Player
 
         private void DropEgg()
         {
-            if (!Input.GetButtonDown("Fire2")) return;
+            if (!Input.GetButtonDown("Fire2") || !EggStateController.Instance.Grabbed) return;
         
             m_playerGrab.ResetGrab();
         }
