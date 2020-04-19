@@ -5,26 +5,9 @@ namespace Env.GateNDoor
 {
     public class PressurePlate : MonoBehaviour
     {
+        [SerializeField] private Collider2D m_collider2D;
+        [SerializeField] private bool m_onlyOnce;
         [SerializeField] private List<GateController> m_gates;
-            
-        // Start is called before the first frame update
-
-        private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(!collision.gameObject.CompareTag("Ground"))
-        {
-            OpenGates();
-        }
-        
-    }
-
-    private void OnCollisionExit2D(Collision2D collision) 
-    {
-        if(!collision.gameObject.CompareTag("Ground"))
-        {
-            CloseGates();
-        }
-    }
 
         // Update is called once per frame
         void Update()
@@ -32,7 +15,7 @@ namespace Env.GateNDoor
         
         }
 
-        private void OpenGates()
+        public void OpenGates()
         {
             Debug.Log("Works");
             foreach (var gate in m_gates)
@@ -41,8 +24,10 @@ namespace Env.GateNDoor
             }
         }
 
-        private void CloseGates()
+        public void CloseGates()
         {
+            if (m_onlyOnce) return;
+            
             foreach (var gate in m_gates)
             {
                 gate.Close();
