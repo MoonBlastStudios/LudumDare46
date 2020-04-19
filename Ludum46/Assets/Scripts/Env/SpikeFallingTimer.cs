@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using Tools;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SpikeFallingTimer : MonoBehaviour
 {
     private Timer timer;
-    private float m_endTime = 5;
+    public float m_endTime = 5;
+    private Position location;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,6 @@ public class SpikeFallingTimer : MonoBehaviour
     public GameObject spike;
     void Spawn()
     {
-        Instantiate(spike);
+        Instantiate(spike, transform.position, Quaternion.identity, null);
     }
 }

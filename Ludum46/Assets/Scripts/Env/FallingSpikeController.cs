@@ -6,7 +6,7 @@ using UnityEngine;
 public class FallingSpikeController : MonoBehaviour
 {
     private Timer timer;
-    private float m_endTime = 10;
+    public float m_endTime = 10;
     
     // Start is called before the first frame update
     void Start()
