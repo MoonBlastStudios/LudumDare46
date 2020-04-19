@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ProjectileSpike : MonoBehaviour
 {
-    
+    public Vector2 m_force;
     private Rigidbody2D m_rb;
 
     
@@ -18,6 +18,16 @@ public class ProjectileSpike : MonoBehaviour
 
     void Update()
     {
-        m_rb.velocity = new Vector2(5,0);
+        m_rb.velocity = m_force;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Egg"))
+        {
+            
+        }
+        
+        Destroy(gameObject);
     }
 }

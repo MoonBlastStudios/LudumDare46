@@ -183,7 +183,7 @@ namespace Player
                 m_playerState = PlayerState.Falling;
                 m_rigidBody2D.gravityScale = m_gravityScale;
                 var velocity = m_rigidBody2D.velocity;
-                velocity = velocity * 0.5f;
+                velocity = velocity * 0.25f;
                 //m_dash = false;
                 return;
             }
