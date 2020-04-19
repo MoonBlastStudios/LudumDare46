@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4178467198464371228}
   - component: {fileID: 1323085194254146868}
   - component: {fileID: 4178467198464371231}
-  - component: {fileID: 4178467198464371217}
   - component: {fileID: 4178467198464371230}
   m_Layer: 10
   m_Name: CeilingSpike
@@ -145,19 +144,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5210164, y: 1.5808384}
   m_EdgeRadius: 0
---- !u!114 &4178467198464371217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4178467198464371227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ea569f6a2ce35e4780ff19bbcc9a6d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spike: {fileID: 0}
 --- !u!61 &4178467198464371230
 BoxCollider2D:
   m_ObjectHideFlags: 0
