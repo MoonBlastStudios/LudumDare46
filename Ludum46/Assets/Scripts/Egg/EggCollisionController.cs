@@ -34,5 +34,23 @@ namespace Egg
                 EggStateController.Instance.OnGround = false;
             }
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log(other.tag);
+            
+            if (other.CompareTag("Lamp"))
+            {
+                EggStateController.Instance.UnderLamp = true;
+            }
+        }
+        
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Lamp"))
+            {
+                EggStateController.Instance.UnderLamp = false;
+            }
+        }
     }
 }
