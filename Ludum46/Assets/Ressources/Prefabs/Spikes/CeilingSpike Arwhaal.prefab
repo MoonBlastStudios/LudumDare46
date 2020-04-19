@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 1323085194254146868}
   - component: {fileID: 4178467198464371231}
   - component: {fileID: 4178467198464371230}
-  - component: {fileID: 7705800468072429318}
   m_Layer: 11
-  m_Name: CeilingSpike
+  m_Name: CeilingSpike Arwhaal
   m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a78b8cf76935b4f96c04db57c91721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_endTime: 2
+  m_endTime: 1
 --- !u!61 &4178467198464371231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,15 +171,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.72565305, y: 1.6152477}
   m_EdgeRadius: 0
---- !u!114 &7705800468072429318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4178467198464371227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15a51762820ef1439c9eb03d1e2569a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
