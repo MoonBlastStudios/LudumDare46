@@ -30,4 +30,6 @@ public class SpikeFallingTimer : MonoBehaviour
     {
         Instantiate(spike, transform.position, spike.transform.rotation, null);
     }
+
+    
 }

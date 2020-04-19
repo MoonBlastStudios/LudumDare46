@@ -37,7 +37,7 @@ namespace Env.GateNDoor
 
                 if (distance > m_gateDistanceDeadZone)
                 {
-                    transform.position = Vector3.Slerp(transform.position, m_destinationPosition,
+                    transform.position = Vector3.Lerp(transform.position, m_destinationPosition,
                         Time.deltaTime * m_gateSpeed);
                 }
             }
@@ -47,7 +47,7 @@ namespace Env.GateNDoor
 
                 if (distance > m_gateDistanceDeadZone)
                 {
-                    transform.position = Vector3.Slerp(transform.position, m_initialPosition,
+                    transform.position = Vector3.Lerp(transform.position, m_initialPosition,
                         Time.deltaTime * m_gateSpeed);
                 }
             }
