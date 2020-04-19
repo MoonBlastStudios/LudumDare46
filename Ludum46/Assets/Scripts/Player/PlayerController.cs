@@ -159,7 +159,12 @@ namespace Player
 
             
             var velocity = m_rigidBody2D.velocity;
-            velocity.y = 0;
+
+            if (velocity.y < 0)
+            {
+                velocity.y = 0;
+            }
+            
             m_rigidBody2D.velocity = velocity;
             
             m_rigidBody2D.AddForce(Vector2.up * m_jumpStrength, ForceMode2D.Impulse);
