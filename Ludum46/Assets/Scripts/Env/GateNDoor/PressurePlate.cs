@@ -8,10 +8,24 @@ namespace Env.GateNDoor
         [SerializeField] private List<GateController> m_gates;
             
         // Start is called before the first frame update
-        void Start()
+
+        private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(!collision.gameObject.CompareTag("Ground"))
         {
-        
+            OpenGates();
         }
+
+        
+    }
+
+    private void OnCollisionExit2D(Collision2D collision) 
+    {
+        if(!collision.gameObject.CompareTag("Ground"))
+        {
+            CloseGates();
+        }
+    }
 
         // Update is called once per frame
         void Update()
@@ -21,6 +35,7 @@ namespace Env.GateNDoor
 
         private void OpenGates()
         {
+            Debug.Log("Works");
             foreach (var gate in m_gates)
             {
                 gate.Open();
