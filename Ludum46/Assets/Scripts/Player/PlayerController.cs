@@ -65,7 +65,7 @@ namespace Player
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag($"Ground") && transform.position.y > other.contacts[0].point.y && !other.gameObject.Equals(m_ground))
+            if (other.gameObject.CompareTag($"Ground") && transform.position.y > other.transform.position.y && !other.gameObject.Equals(m_ground))
             {
                 Debug.Log("Collided With Ground");
                 m_ground = other.gameObject;
@@ -185,8 +185,9 @@ namespace Player
             
             if (m_secondaryJumpAction) return; 
             
-            Debug.Log("Dash Activated");
+            Debug.Log("Dash");
             
+
             m_rigidBody2D.AddForce(new Vector2(m_flipDirection.LastDirection, 0) * m_dashForce,
                 ForceMode2D.Impulse);
 

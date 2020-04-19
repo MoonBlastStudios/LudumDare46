@@ -62,7 +62,6 @@ public class PlayerGrab : MonoBehaviour
             
             
             readyToCatch = true;
-            Debug.Log("Can Catch Again");
 
             return;
         }
