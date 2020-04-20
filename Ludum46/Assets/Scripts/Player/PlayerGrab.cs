@@ -104,4 +104,10 @@ public class PlayerGrab : MonoBehaviour
         extendedHitBox.SetActive(false);
         EggStateController.Instance.Grabbed = false;
     }
+
+    public void Grab()
+    {
+        grabbedEgg = true;
+        EggStateController.Instance.Grabbed = true;
+    }
 }
