@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - Ground
   - Spike
+  - PressurePlate
+  - Ceilling
   layers:
   - Default
   - TransparentFX

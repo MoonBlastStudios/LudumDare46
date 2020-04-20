@@ -206,6 +206,9 @@ MonoBehaviour:
   m_rigidBody2D: {fileID: 6970555228964498018}
   m_flipDirection: {fileID: 523851313314388668}
   m_playerSpineController: {fileID: 523851313314388614}
+  m_doubleJumpShakeData: {fileID: 11400000, guid: 1dedcf249df78bc488c2f6576495cd16,
+    type: 2}
+  m_dashShakeData: {fileID: 11400000, guid: 5ea3a8f146e26aa4eb30302f75fdf896, type: 2}
   m_inputDeadZone: 0.25
   m_velocityDeadZone: {x: 3, y: 1}
   m_acceleration: 2000
@@ -254,7 +257,7 @@ MonoBehaviour:
   eggTrans: {fileID: 0}
   grabPosion: {x: 0, y: 2}
   throwForce: {x: 9, y: 3}
-  dropForce: {x: 3, y: 2}
+  dropForce: {x: 2, y: 2}
   regularHitBox: {fileID: 1322607266}
   extendedHitBox: {fileID: 1474790575}
 --- !u!114 &523851313314388668

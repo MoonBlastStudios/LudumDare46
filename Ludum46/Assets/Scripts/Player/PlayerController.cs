@@ -1,4 +1,5 @@
 ﻿using System;
+using Com.LuisPedroFonseca.ProCamera2D;
 using Egg;
 using Sirenix.OdinInspector;
 using Tools;
@@ -13,6 +14,9 @@ namespace Player
         [FoldoutGroup("Components")] [SerializeField] private Rigidbody2D m_rigidBody2D;
         [FoldoutGroup("Components")] [SerializeField] private FlipDirection m_flipDirection;
         [FoldoutGroup("Components")] [SerializeField] private PlayerSpineController m_playerSpineController;
+
+        [FoldoutGroup("Shake Data")] [SerializeField] private ShakePreset m_doubleJumpShakeData;
+        [FoldoutGroup("Shake Data")] [SerializeField] private ShakePreset m_dashShakeData;
 
         [FoldoutGroup("Movement Data")] [SerializeField] private float m_inputDeadZone;
         [FoldoutGroup("Movement Data")] [SerializeField] private Vector2 m_velocityDeadZone;
@@ -161,6 +165,8 @@ namespace Player
                 m_playerSpineController.UpdateAnimation(!EggStateController.Instance.Grabbed
                     ? BonBonAnimationState.DoubleJump
                     : BonBonAnimationState.DoubleJumpWithEgg);
+                
+                ProCamera2DShake.Instance.Shake(m_doubleJumpShakeData);
             }
             else
             {
@@ -209,6 +215,8 @@ namespace Player
             m_rigidBody2D.AddForce(new Vector2(m_flipDirection.LastDirection, 0) * m_dashForce,
                 ForceMode2D.Impulse);
 
+            ProCamera2DShake.Instance.Shake(m_dashShakeData);
+            
             State = PlayerState.Dashing;
             m_rigidBody2D.gravityScale = 0;
             m_dash = true;
