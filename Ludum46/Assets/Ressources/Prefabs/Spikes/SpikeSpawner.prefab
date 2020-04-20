@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea569f6a2ce35e4780ff19bbcc9a6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spike: {fileID: 4178467198464371227, guid: 8a16fd59a7ec03e459f5f31dbdede1df, type: 3}
+  m_spawnOffset: {x: 0, y: 0, z: 0}
+  m_startReady: 0
+  m_manual: 0
+  m_spawnTime: 5
+  spike: {fileID: 4914498454893579160, guid: d86487a9dc0c1e54b8df3a903c084170, type: 3}
 --- !u!1 &2780429157700124404
 GameObject:
   m_ObjectHideFlags: 0
