@@ -7,15 +7,19 @@ using UnityEngine.UIElements;
 public class SpikeFallingTimer : MonoBehaviour
 {
     [SerializeField] private Vector3 m_spawnOffset;
+    [SerializeField] private bool m_startReady;
     
     private Timer timer;
     public float m_spawnTime = 5;
     private Position location;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        timer = new Timer(m_spawnTime, m_spawnTime);
+        if(m_startReady)
+            timer = new Timer(m_spawnTime, m_spawnTime);
+        else
+            timer = new Timer(m_spawnTime);
     }
 
     // Update is called once per frame
