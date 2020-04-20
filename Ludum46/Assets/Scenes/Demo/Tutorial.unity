@@ -137,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 7238100198592759465, guid: b0455426f5c4f024081d1180557d916a,
         type: 3}
       propertyPath: m_gateMove.y
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7238100198592759465, guid: b0455426f5c4f024081d1180557d916a,
         type: 3}
