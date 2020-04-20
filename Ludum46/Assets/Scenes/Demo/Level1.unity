@@ -725,6 +725,11 @@ PrefabInstance:
       propertyPath: m_spawnOffset.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7298103108694633320, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
+        type: 3}
+      propertyPath: m_spawnTime
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7298103108694633321, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4566,6 +4571,11 @@ PrefabInstance:
       propertyPath: m_spawnOffset.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7298103108694633320, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
+        type: 3}
+      propertyPath: m_spawnTime
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7298103108694633321, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6435,6 +6445,11 @@ PrefabInstance:
       propertyPath: m_spawnOffset.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7298103108694633320, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
+        type: 3}
+      propertyPath: m_spawnTime
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7298103108694633321, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6592,6 +6607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_spawnOffset.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298103108694633320, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
+        type: 3}
+      propertyPath: m_spawnTime
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7298103108694633321, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
         type: 3}
@@ -7968,6 +7988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_spawnOffset.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298103108694633320, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
+        type: 3}
+      propertyPath: m_spawnTime
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7298103108694633321, guid: 7b7f3619c397b4d4bb68f7e09d5f7a90,
         type: 3}
