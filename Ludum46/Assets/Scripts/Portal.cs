@@ -22,6 +22,9 @@ public class Portal : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        SceneManager.LoadScene(m_sceneIndex);
+        if (other.gameObject.CompareTag("Egg"))
+        {
+            SceneManager.LoadScene(m_sceneIndex);
+        }
     }
 }

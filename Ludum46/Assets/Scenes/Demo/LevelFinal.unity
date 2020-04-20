@@ -6613,6 +6613,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 6450482667950514778, guid: 5265c77b3779c9c49919e8f0789bdf4a,
+        type: 3}
+      propertyPath: m_sceneIndex
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6938911335150972860, guid: 5265c77b3779c9c49919e8f0789bdf4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6626,7 +6631,7 @@ PrefabInstance:
     - target: {fileID: 6938911335150972860, guid: 5265c77b3779c9c49919e8f0789bdf4a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -163.90625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6938911335150972860, guid: 5265c77b3779c9c49919e8f0789bdf4a,
         type: 3}
