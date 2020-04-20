@@ -1803,14 +1803,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2473344045357523988, guid: b8da843a0ff2aaa47b8682aa79f8989f,
         type: 3}
-      propertyPath: eggTrans
-      value: 
-      objectReference: {fileID: 639725837}
-    - target: {fileID: 2473344045357523988, guid: b8da843a0ff2aaa47b8682aa79f8989f,
-        type: 3}
       propertyPath: rbEgg
       value: 
       objectReference: {fileID: 639725834}
+    - target: {fileID: 2473344045357523988, guid: b8da843a0ff2aaa47b8682aa79f8989f,
+        type: 3}
+      propertyPath: eggTrans
+      value: 
+      objectReference: {fileID: 639725837}
     - target: {fileID: 6970555228964498017, guid: b8da843a0ff2aaa47b8682aa79f8989f,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 29516666}
   m_Layer: 10
   m_Name: Square (8)
-  m_TagString: Ground
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1249,6 +1249,16 @@ PrefabInstance:
       propertyPath: m_gateSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7238100198592759465, guid: b0455426f5c4f024081d1180557d916a,
+        type: 3}
+      propertyPath: m_gateMove.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7238100198592759465, guid: b0455426f5c4f024081d1180557d916a,
+        type: 3}
+      propertyPath: m_gateDistanceDeadZone
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7238100198592759467, guid: b0455426f5c4f024081d1180557d916a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2286,23 +2296,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2473344045357523988, guid: b8da843a0ff2aaa47b8682aa79f8989f,
         type: 3}
-      propertyPath: eggTrans
-      value: 
-      objectReference: {fileID: 639725837}
-    - target: {fileID: 2473344045357523988, guid: b8da843a0ff2aaa47b8682aa79f8989f,
-        type: 3}
       propertyPath: rbEgg
       value: 
       objectReference: {fileID: 639725834}
+    - target: {fileID: 2473344045357523988, guid: b8da843a0ff2aaa47b8682aa79f8989f,
+        type: 3}
+      propertyPath: eggTrans
+      value: 
+      objectReference: {fileID: 639725837}
     - target: {fileID: 6970555228964498017, guid: b8da843a0ff2aaa47b8682aa79f8989f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.18
+      value: -16.12
       objectReference: {fileID: 0}
     - target: {fileID: 6970555228964498017, guid: b8da843a0ff2aaa47b8682aa79f8989f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.34
+      value: 13.05
       objectReference: {fileID: 0}
     - target: {fileID: 6970555228964498017, guid: b8da843a0ff2aaa47b8682aa79f8989f,
         type: 3}
@@ -2466,7 +2476,7 @@ GameObject:
   - component: {fileID: 699972004}
   m_Layer: 10
   m_Name: Square (2)
-  m_TagString: Ground
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3610,26 +3620,6 @@ PrefabInstance:
     - target: {fileID: 3280614576523513111, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4820616050024706679, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4820616050024706679, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4820616050024706679, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4820616050024706679, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5846151627081822872, guid: 3e24229dc073a9c41a4b5115c2a7fdaa,
@@ -5269,6 +5259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1785226103}
+  - component: {fileID: 1785226104}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5290,6 +5281,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1785226104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785226102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a0f928dc54b03498d207db10e0c001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1803826284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8248673578166995110, guid: 703c09222e763d34e96ead81da3ac7c0,
@@ -5652,7 +5655,7 @@ GameObject:
   - component: {fileID: 1991969460}
   m_Layer: 10
   m_Name: Square (13)
-  m_TagString: Ground
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6453,12 +6456,17 @@ PrefabInstance:
     - target: {fileID: 3987271773784098897, guid: e97f8c0ede68fad4aacda39d4ac08618,
         type: 3}
       propertyPath: HorizontalFollowSmoothness
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 3987271773784098897, guid: e97f8c0ede68fad4aacda39d4ac08618,
         type: 3}
       propertyPath: VerticalFollowSmoothness
-      value: 0.1
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987271773784098897, guid: e97f8c0ede68fad4aacda39d4ac08618,
+        type: 3}
+      propertyPath: CenterTargetOnStart
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7794480521302562116, guid: e97f8c0ede68fad4aacda39d4ac08618,
         type: 3}

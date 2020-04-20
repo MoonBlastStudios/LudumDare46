@@ -1,0 +1,328 @@
+
+BonBon_Spine_05.png
+size: 4096,4096
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+backscarf
+  rotate: false
+  xy: 3083, 3804
+  size: 824, 277
+  orig: 841, 337
+  offset: 17, 32
+  index: -1
+bag
+  rotate: false
+  xy: 1689, 722
+  size: 830, 715
+  orig: 830, 716
+  offset: 0, 0
+  index: -1
+bangs
+  rotate: false
+  xy: 2405, 3531
+  size: 676, 550
+  orig: 676, 550
+  offset: 0, 0
+  index: -1
+belt
+  rotate: false
+  xy: 797, 587
+  size: 658, 765
+  orig: 658, 765
+  offset: 0, 0
+  index: -1
+belt2
+  rotate: false
+  xy: 2298, 1491
+  size: 687, 363
+  orig: 691, 364
+  offset: 0, 1
+  index: -1
+bottomshirt
+  rotate: false
+  xy: 1355, 3165
+  size: 1048, 916
+  orig: 1050, 917
+  offset: 1, 0
+  index: -1
+chest
+  rotate: true
+  xy: 1355, 2444
+  size: 719, 1036
+  orig: 721, 1038
+  offset: 1, 1
+  index: -1
+crotch
+  rotate: false
+  xy: 1457, 786
+  size: 198, 278
+  orig: 201, 280
+  offset: 1, 1
+  index: -1
+eyebrow
+  rotate: false
+  xy: 3078, 3205
+  size: 201, 73
+  orig: 203, 75
+  offset: 1, 1
+  index: -1
+head
+  rotate: false
+  xy: 2, 662
+  size: 793, 690
+  orig: 796, 702
+  offset: 2, 11
+  index: -1
+lowerarm
+  rotate: false
+  xy: 3217, 971
+  size: 504, 536
+  orig: 504, 536
+  offset: 0, 0
+  index: -1
+lowerarmshirt
+  rotate: true
+  xy: 3083, 3280
+  size: 522, 550
+  orig: 522, 551
+  offset: 0, 1
+  index: -1
+lowerbun
+  rotate: false
+  xy: 797, 19
+  size: 598, 566
+  orig: 601, 570
+  offset: 1, 2
+  index: -1
+lowerbunelastic
+  rotate: true
+  xy: 1457, 1066
+  size: 286, 211
+  orig: 288, 213
+  offset: 1, 1
+  index: -1
+lowereye
+  rotate: false
+  xy: 654, 513
+  size: 141, 147
+  orig: 143, 156
+  offset: 1, 1
+  index: -1
+lowereye1
+  rotate: true
+  xy: 654, 159
+  size: 140, 116
+  orig: 142, 126
+  offset: 1, 2
+  index: -1
+lowereye2
+  rotate: true
+  xy: 654, 36
+  size: 121, 54
+  orig: 123, 66
+  offset: 1, 9
+  index: -1
+lowereye3
+  rotate: false
+  xy: 2791, 3183
+  size: 121, 47
+  orig: 123, 58
+  offset: 1, 3
+  index: -1
+lowerfoot
+  rotate: false
+  xy: 3301, 2170
+  size: 694, 421
+  orig: 694, 423
+  offset: 0, 2
+  index: -1
+lowerhand
+  rotate: false
+  xy: 3635, 3457
+  size: 345, 345
+  orig: 345, 345
+  offset: 0, 0
+  index: -1
+lowerhand2
+  rotate: true
+  xy: 2184, 363
+  size: 357, 266
+  orig: 360, 269
+  offset: 1, 2
+  index: -1
+lowerleg
+  rotate: true
+  xy: 1618, 250
+  size: 344, 564
+  orig: 346, 564
+  offset: 0, 0
+  index: -1
+lowerpants
+  rotate: false
+  xy: 1689, 1439
+  size: 607, 1003
+  orig: 620, 1005
+  offset: 2, 1
+  index: -1
+lowerwing
+  rotate: true
+  xy: 2, 1354
+  size: 1040, 1685
+  orig: 1040, 1686
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 1544, 2420
+  size: 134, 22
+  orig: 137, 24
+  offset: 2, 1
+  index: -1
+mouth1
+  rotate: false
+  xy: 1544, 2399
+  size: 83, 19
+  orig: 86, 22
+  offset: 1, 2
+  index: -1
+mouth2
+  rotate: false
+  xy: 654, 2
+  size: 58, 32
+  orig: 60, 35
+  offset: 1, 2
+  index: -1
+mouth3
+  rotate: true
+  xy: 710, 36
+  size: 121, 48
+  orig: 123, 51
+  offset: 1, 1
+  index: -1
+mouth4
+  rotate: false
+  xy: 1355, 2404
+  size: 115, 38
+  orig: 118, 40
+  offset: 2, 1
+  index: -1
+nose
+  rotate: false
+  xy: 1472, 2408
+  size: 70, 34
+  orig: 72, 36
+  offset: 1, 1
+  index: -1
+sidebang
+  rotate: false
+  xy: 3680, 1577
+  size: 317, 591
+  orig: 320, 593
+  offset: 1, 1
+  index: -1
+topscarf copy
+  rotate: false
+  xy: 2393, 2593
+  size: 977, 570
+  orig: 977, 570
+  offset: 0, 0
+  index: -1
+upperarm
+  rotate: true
+  xy: 3372, 2776
+  size: 502, 591
+  orig: 502, 592
+  offset: 0, 1
+  index: -1
+upperarmshirt
+  rotate: false
+  xy: 2521, 510
+  size: 502, 555
+  orig: 503, 556
+  offset: 1, 1
+  index: -1
+upperbun
+  rotate: false
+  xy: 2, 13
+  size: 650, 647
+  orig: 652, 649
+  offset: 1, 1
+  index: -1
+upperbunelastic
+  rotate: false
+  xy: 2791, 3232
+  size: 285, 297
+  orig: 287, 301
+  offset: 1, 2
+  index: -1
+uppereye
+  rotate: true
+  xy: 1457, 576
+  size: 208, 159
+  orig: 221, 165
+  offset: 1, 1
+  index: -1
+uppereye1
+  rotate: true
+  xy: 654, 301
+  size: 210, 129
+  orig: 223, 134
+  offset: 1, 1
+  index: -1
+uppereye2
+  rotate: true
+  xy: 1618, 596
+  size: 188, 69
+  orig: 190, 84
+  offset: 1, 12
+  index: -1
+uppereye3
+  rotate: true
+  xy: 1397, 402
+  size: 183, 47
+  orig: 185, 58
+  offset: 1, 3
+  index: -1
+upperfoot
+  rotate: false
+  xy: 2521, 1067
+  size: 694, 422
+  orig: 694, 423
+  offset: 0, 1
+  index: -1
+upperhand
+  rotate: true
+  xy: 2405, 3179
+  size: 350, 384
+  orig: 352, 386
+  offset: 1, 1
+  index: -1
+upperhand2
+  rotate: true
+  xy: 3301, 1902
+  size: 266, 377
+  orig: 268, 381
+  offset: 1, 2
+  index: -1
+upperleg
+  rotate: true
+  xy: 2987, 1509
+  size: 345, 564
+  orig: 346, 564
+  offset: 0, 0
+  index: -1
+upperpants
+  rotate: true
+  xy: 2298, 1856
+  size: 586, 1001
+  orig: 651, 1001
+  offset: 0, 0
+  index: -1
+upperwing
+  rotate: false
+  xy: 2, 2396
+  size: 1351, 1685
+  orig: 1351, 1686
+  offset: 0, 0
+  index: -1

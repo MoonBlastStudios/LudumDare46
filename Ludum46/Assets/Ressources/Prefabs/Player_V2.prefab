@@ -205,6 +205,7 @@ MonoBehaviour:
   m_playerState: 3
   m_rigidBody2D: {fileID: 6970555228964498018}
   m_flipDirection: {fileID: 523851313314388668}
+  m_playerSpineController: {fileID: 523851313314388614}
   m_inputDeadZone: 0.25
   m_velocityDeadZone: {x: 3, y: 1}
   m_acceleration: 2000
@@ -242,6 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6069f60d527414793968e05320f460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerSpineController: {fileID: 523851313314388614}
+  m_playerController: {fileID: 6970555228964498019}
   flipDirectionController: {fileID: 523851313314388668}
   readyCatchTime: 1
   eggHoldingLayer: 8
@@ -249,7 +252,7 @@ MonoBehaviour:
   rbPlayer: {fileID: 6970555228964498018}
   playerTrans: {fileID: 6970555228964498017}
   eggTrans: {fileID: 0}
-  grabPosion: {x: 0, y: 110}
+  grabPosion: {x: 0, y: 2}
   throwForce: {x: 9, y: 3}
   dropForce: {x: 3, y: 2}
   regularHitBox: {fileID: 1322607266}
@@ -280,8 +283,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f8d9bf3ceec2b47a937f36b757d709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerController: {fileID: 6970555228964498019}
   m_skele: {fileID: 6970555229530429806}
   m_flipDirection: {fileID: 523851313314388668}
+  m_idle: idle
+  m_idleWithEgg: idleegg
+  m_walk: run
+  m_walkEgg: run with egg
+  m_jump: jump
+  m_jumpEgg: jumpegg
+  m_doubleJump: doublejump
+  m_doubleJumpEgg: doublejumpegg
+  m_dash: dash
+  m_dashWithEgg: dashegg
+  m_fall: falling
+  m_fallWithEgg: fallingegg
+  m_throw: throw
 --- !u!114 &489535556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +337,7 @@ GameObject:
   - component: {fileID: 6970555229530429805}
   - component: {fileID: 6970555229530429806}
   m_Layer: 9
-  m_Name: Hitman
+  m_Name: BonBon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,8 +351,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6970555229530429800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: -0.04, y: -0.007, z: 0}
+  m_LocalScale: {x: 0.048632834, y: 0.048632834, z: 0.16210943}
   m_Children: []
   m_Father: {fileID: 6970555228964498017}
   m_RootOrder: 0
@@ -366,7 +383,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c037afc4aa342b24ea567d73284630eb, type: 2}
+  - {fileID: 2100000, guid: d286209e45aae154bb9abc36d741a320, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -399,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 84caeb98e0d77174f9b128e374d05dc1, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 7cdc1fe918b8ee64fb73c2b5280f88e0, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -420,6 +437,6 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: 
+  _animationName: fallingegg
   loop: 0
   timeScale: 1
