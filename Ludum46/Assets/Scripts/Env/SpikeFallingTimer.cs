@@ -8,6 +8,7 @@ public class SpikeFallingTimer : MonoBehaviour
 {
     [SerializeField] private Vector3 m_spawnOffset;
     [SerializeField] private bool m_startReady;
+    [SerializeField] private bool m_manual;
     
     private Timer timer;
     public float m_spawnTime = 5;
@@ -16,7 +17,7 @@ public class SpikeFallingTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(m_startReady)
+        if (m_startReady)
             timer = new Timer(m_spawnTime, m_spawnTime);
         else
             timer = new Timer(m_spawnTime);
@@ -25,6 +26,8 @@ public class SpikeFallingTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_manual) return;
+        
         if (timer.Tick(1))
         {
             Spawn();
@@ -32,7 +35,7 @@ public class SpikeFallingTimer : MonoBehaviour
     }
 
     public GameObject spike;
-    void Spawn()
+    public void Spawn()
     {
         Instantiate(spike, transform.position + m_spawnOffset, spike.transform.rotation, null);
     }
