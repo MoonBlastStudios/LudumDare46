@@ -22,7 +22,7 @@ public class Portal : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Egg"))
+        if (other.gameObject.CompareTag("Egg") || other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(m_sceneIndex);
         }
