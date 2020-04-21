@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,7 +25,13 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Egg") || other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(m_sceneIndex);
+           LoadScene();
         }
+    }
+
+    [Button("Load Scene")]
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(m_sceneIndex);
     }
 }
