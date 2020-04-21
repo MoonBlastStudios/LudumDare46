@@ -6,12 +6,13 @@ namespace Managers
 {
     public class ResetLevel : MonoBehaviour
     {
+        private static ResetLevel m_instance = null;
         private bool m_loading;
         private int m_scene;
         // Start is called before the first frame update
         void Start()
         {
-        
+            m_instance = this;
         }
 
         // Update is called once per frame
@@ -45,6 +46,11 @@ namespace Managers
             }
 
             m_loading = false;
+        }
+
+        public static void StartReset()
+        {
+            m_instance.StartCoroutine(m_instance.LoadYourAsyncScene());
         }
     }
 }

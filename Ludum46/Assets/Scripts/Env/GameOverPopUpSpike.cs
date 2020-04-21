@@ -1,5 +1,6 @@
 ﻿using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Env
 {
@@ -17,8 +18,7 @@ namespace Env
         {
             if (other.gameObject.tag == "Spike")
             {
-                m_playerGrab.transform.position = m_spawnPoint;
-                m_playerGrab.Grab();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
 
