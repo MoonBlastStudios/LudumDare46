@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Egg;
 using UnityEngine;
 
 
@@ -10,11 +11,15 @@ public class EggThrow : MonoBehaviour
     bool Throw = false; 
     public Vector2 eggThrow;
 
+    
+    private float initialGravity = 0;
+    
     private void Start() 
     {
         //eggThrow.x = 250f;
         //eggThrow.y = 250f;
-
+        
+        initialGravity = rb_egg.gravityScale;
     }
 
     // Update is called once per frame
@@ -23,6 +28,15 @@ public class EggThrow : MonoBehaviour
         /*if (Input.GetKeyDown("mouse 0")){
             Throw = true;
         }*/
+
+        if (EggStateController.Instance.Grabbed)
+        {
+            rb_egg.gravityScale = 0;
+        }
+        else
+        {
+            rb_egg.gravityScale = initialGravity;
+        }
     }
 
     void FixedUpdate() 

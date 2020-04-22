@@ -6,19 +6,28 @@ using UnityEngine.UIElements;
 
 public class SpikeFallingTimer : MonoBehaviour
 {
-    private Timer timer;
-    public float m_endTime = 5;
-    private Position location;
+    [SerializeField] private Vector3 m_spawnOffset;
+    [SerializeField] private bool m_startReady;
+    [SerializeField] private bool m_manual;
     
+    private Timer timer;
+    public float m_spawnTime = 5;
+    private Position location;
+
     // Start is called before the first frame update
     void Start()
     {
-        timer = new Timer(m_endTime);
+        if (m_startReady)
+            timer = new Timer(m_spawnTime, m_spawnTime);
+        else
+            timer = new Timer(m_spawnTime);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (m_manual) return;
+        
         if (timer.Tick(1))
         {
             Spawn();
@@ -26,8 +35,10 @@ public class SpikeFallingTimer : MonoBehaviour
     }
 
     public GameObject spike;
-    void Spawn()
+    public void Spawn()
     {
-        Instantiate(spike, transform.position, spike.transform.rotation, null);
+        Instantiate(spike, transform.position + m_spawnOffset, spike.transform.rotation, null);
     }
+
+    
 }

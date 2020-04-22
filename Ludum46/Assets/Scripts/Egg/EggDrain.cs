@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using Managers;
+using Sirenix.OdinInspector;
 using UI;
 using UnityEngine;
 
@@ -57,6 +58,8 @@ namespace Egg
                 Debug.Log("Egg Died");
                 m_currentHealth = 0;
                 m_gameOver = true;
+                
+                ResetLevel.StartReset();
             }
         }
 

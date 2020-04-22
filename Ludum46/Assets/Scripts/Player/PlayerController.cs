@@ -1,4 +1,6 @@
 ﻿using System;
+using Com.LuisPedroFonseca.ProCamera2D;
+using Egg;
 using Sirenix.OdinInspector;
 using Tools;
 using UnityEngine;
@@ -11,6 +13,10 @@ namespace Player
     
         [FoldoutGroup("Components")] [SerializeField] private Rigidbody2D m_rigidBody2D;
         [FoldoutGroup("Components")] [SerializeField] private FlipDirection m_flipDirection;
+        [FoldoutGroup("Components")] [SerializeField] private PlayerSpineController m_playerSpineController;
+
+        [FoldoutGroup("Shake Data")] [SerializeField] private ShakePreset m_doubleJumpShakeData;
+        [FoldoutGroup("Shake Data")] [SerializeField] private ShakePreset m_dashShakeData;
 
         [FoldoutGroup("Movement Data")] [SerializeField] private float m_inputDeadZone;
         [FoldoutGroup("Movement Data")] [SerializeField] private Vector2 m_velocityDeadZone;
@@ -89,22 +95,23 @@ namespace Player
 
         private void UpdateState()
         {
-            if (State == PlayerState.Dashing) return;
-        
-            if (m_rigidBody2D.velocity.y > m_velocityDeadZone.y)
+            if (m_rigidBody2D.velocity.y > m_velocityDeadZone.y && m_ground == null)
             {
                 State = PlayerState.Jumping;
             }
-            else if (m_rigidBody2D.velocity.y < -m_velocityDeadZone.y)
+            else if (m_rigidBody2D.velocity.y < -m_velocityDeadZone.y && m_ground == null)
             {
 
                 State = PlayerState.Falling;
             }
-            else if (m_ground != null)
+            else if(m_ground != null)
             {
                 if (m_rigidBody2D.velocity.x > m_velocityDeadZone.x || m_rigidBody2D.velocity.x < -m_velocityDeadZone.x)
                 {
-                    State = PlayerState.Moving;
+                    if (m_rigidBody2D.velocity.x > -m_maxMovementSpeed - 1 && m_rigidBody2D.velocity.x < m_maxMovementSpeed + 1 || State != PlayerState.Dashing)
+                    {
+                        State = PlayerState.Moving;   
+                    }
                 }
                 else
                 {
@@ -128,9 +135,8 @@ namespace Player
                 return;
             }
 
-            if (State == PlayerState.Dashing || (m_horizontalInput < -m_inputDeadZone || m_horizontalInput > m_inputDeadZone)) return;
+            if ((m_horizontalInput < -m_inputDeadZone || m_horizontalInput > m_inputDeadZone)) return;
             
-            Debug.Log("Slow Down");
             
             if (m_rigidBody2D.velocity.x > m_velocityDeadZone.x)
             {
@@ -155,6 +161,18 @@ namespace Player
             if (m_jump)
             {
                 m_secondaryJumpAction = true;
+                
+                m_playerSpineController.UpdateAnimation(!EggStateController.Instance.Grabbed
+                    ? BonBonAnimationState.DoubleJump
+                    : BonBonAnimationState.DoubleJumpWithEgg);
+                
+                ProCamera2DShake.Instance.Shake(m_doubleJumpShakeData);
+            }
+            else
+            {
+                m_playerSpineController.UpdateAnimation(!EggStateController.Instance.Grabbed
+                    ? BonBonAnimationState.Jump
+                    : BonBonAnimationState.JumpWithEgg);
             }
 
             
@@ -179,11 +197,10 @@ namespace Player
             if (m_dash)
             {
                 if (!m_dashTimer.Tick(1)) return;
-                
-                m_playerState = PlayerState.Falling;
+
                 m_rigidBody2D.gravityScale = m_gravityScale;
                 var velocity = m_rigidBody2D.velocity;
-                velocity = velocity * 0.5f;
+                velocity = velocity * 0.25f;
                 //m_dash = false;
                 return;
             }
@@ -198,7 +215,9 @@ namespace Player
             m_rigidBody2D.AddForce(new Vector2(m_flipDirection.LastDirection, 0) * m_dashForce,
                 ForceMode2D.Impulse);
 
-            m_playerState = PlayerState.Dashing;
+            ProCamera2DShake.Instance.Shake(m_dashShakeData);
+            
+            State = PlayerState.Dashing;
             m_rigidBody2D.gravityScale = 0;
             m_dash = true;
             m_secondaryJumpAction = true;
@@ -211,39 +230,61 @@ namespace Player
     
 
 
-        private PlayerState State
+        public PlayerState State
         {
             get => m_playerState;
             set
             {
-                switch (value)
+                if (m_playerState != value)
                 {
-                    case PlayerState.Idle:
-                        m_jump = false;
-                        m_secondaryJumpAction = false;
-                        m_dash = false;
-                        break;
-                    case PlayerState.Moving:
-                        m_jump = false;
-                        m_secondaryJumpAction = false;
-                        m_dash = false;
-                        break;
-                    case PlayerState.Jumping:
-                        break;
-                    case PlayerState.Falling:
-                        break;
-                    case PlayerState.None:
-                        break;
-                    case PlayerState.Dashing:
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(value), value, null);
+                    switch (value)
+                    {
+                        case PlayerState.Idle:
+                            m_jump = false;
+                            m_secondaryJumpAction = false;
+                            m_dash = false;
+
+                            m_playerSpineController.UpdateAnimation(!EggStateController.Instance.Grabbed
+                                ? BonBonAnimationState.Idle
+                                : BonBonAnimationState.IdleWithEgg);
+
+                            break;
+                        case PlayerState.Moving:
+                            m_jump = false;
+                            m_secondaryJumpAction = false;
+                            m_dash = false;
+
+                            m_playerSpineController.UpdateAnimation(!EggStateController.Instance.Grabbed
+                                ? BonBonAnimationState.Run
+                                : BonBonAnimationState.RunWithEgg);
+
+                            break;
+                        case PlayerState.Jumping:
+                            break;
+                        case PlayerState.Falling:
+
+                            m_playerSpineController.UpdateAnimation(!EggStateController.Instance.Grabbed
+                                ? BonBonAnimationState.Fall
+                                : BonBonAnimationState.FalLWithEgg);
+                            break;
+                        case PlayerState.None:
+                            break;
+                        case PlayerState.Dashing:
+                            m_playerSpineController.UpdateAnimation(!EggStateController.Instance.Grabbed
+                                ? BonBonAnimationState.Dash
+                                : BonBonAnimationState.DashWithEgg);
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(value), value, null);
+                    }
                 }
 
                 m_playerState = value;
             }
         }
 
+
+        public float MaxMovementSpeed => m_maxMovementSpeed;
 
         public float HorizontalInput => m_horizontalInput;
     }

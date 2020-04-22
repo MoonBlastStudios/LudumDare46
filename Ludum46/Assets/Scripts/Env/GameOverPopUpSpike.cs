@@ -1,28 +1,37 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameOverPopUpSpike : MonoBehaviour
+namespace Env
 {
-    public GameObject gameOverMessage;
-    private void OnCollisionEnter2D(Collision2D other)
+    public class GameOverPopUpSpike : MonoBehaviour
     {
-        if (other.gameObject.tag == "Spike")
+        public PlayerGrab m_playerGrab;
+        private Vector3 m_spawnPoint;
+    
+        private void Awake()
         {
-            Instantiate(gameOverMessage);
+            m_spawnPoint = transform.position;
         }
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.tag == "Spike")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Start is called before the first frame update
+        void Start()
+        {
         
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+        
+        }
     }
 }
